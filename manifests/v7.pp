@@ -64,7 +64,7 @@ class java::v7 {
   case $::operatingsystem {
     debian, ubuntu: {
       file { '/tmp/java.preseed':
-        source => 'puppet:///modules/java7/java.preseed',
+        source => 'puppet:///modules/java/java.preseed',
         mode   => '0600',
         backup => false,
       }
