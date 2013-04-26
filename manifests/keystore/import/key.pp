@@ -19,7 +19,7 @@ define java::keystore::import::key ($ensure=present,
                                     $pkey,
                                     $cert,
                                     $pkey_pass,
-                                    $keystore='${JAVA_HOME}/jre/lib/security/cacerts',
+                                    $keystore="${JAVA_HOME}/jre/lib/security/cacerts",
                                     $storepass='changeit') {
 
   $cacert_cache_dir = '/var/cache/java_keys'
