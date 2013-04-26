@@ -29,7 +29,7 @@ define java::keystore::import::key ($ensure=present,
       ensure => directory,
       owner  => 'root',
       group  => 'root',
-      mode   => 0750,
+      mode   => '0750',
     }
   }
 
