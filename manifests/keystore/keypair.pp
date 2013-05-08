@@ -1,32 +1,28 @@
-/*
-
-=Definition: java::keystore::keypair
-
-Creates (or delete) a keypair from a java keystore.
-
-Args:
-  $name             - key alias in keystore
-  $keystore         - keystore filename (mandatory)
-  $basedir          - keystore location (mandatory)
-  $keyalg           - key algorithm (default: RSA)
-  $keysize          - key size (default: 2048)
-  $storepass        - keystore password (default: changeit)
-  $alias            - key pair alias (default: $name)
-  $validity         - key pair validity (default: 3650 days)
-  $commonName       - key pair common name (default: localhost)
-  $organisationUnit - key pair organisation unit (default: empty)
-  $organisation     - key pair organisation (default: empty)
-  $country          - key pair country (default: empty)
-  keypass           - private key password (default: changeit)
-
-
-Notes:
-  - keytool will update an existing keystore!
-  - according to https://issues.apache.org/bugzilla/show_bug.cgi?id=38217 ,
-    storepass and keypass should be the same. As it's not sure it has
-    to be the case in the future, we let you the choice about that.
-
-*/
+# =Definition: java::keystore::keypair
+# 
+# Creates (or delete) a keypair from a java keystore.
+# 
+# Args:
+#   $name             - key alias in keystore
+#   $keystore         - keystore filename (mandatory)
+#   $basedir          - keystore location (mandatory)
+#   $keyalg           - key algorithm (default: RSA)
+#   $keysize          - key size (default: 2048)
+#   $storepass        - keystore password (default: changeit)
+#   $alias            - key pair alias (default: $name)
+#   $validity         - key pair validity (default: 3650 days)
+#   $commonName       - key pair common name (default: localhost)
+#   $organisationUnit - key pair organisation unit (default: empty)
+#   $organisation     - key pair organisation (default: empty)
+#   $country          - key pair country (default: empty)
+#   keypass           - private key password (default: changeit)
+# 
+# 
+# Notes:
+#   - keytool will update an existing keystore!
+#   - according to https://issues.apache.org/bugzilla/show_bug.cgi?id=38217 ,
+#     storepass and keypass should be the same. As it's not sure it has
+#     to be the case in the future, we let you the choice about that.
 define java::keystore::keypair($ensure=present,
                                $keystore,
                                $basedir,
