@@ -2,7 +2,7 @@ class java::v6 {
 
   include java::params
 
-  if $operatingsystem =~ /Ubuntu|Debian/ and $java16_vendor == "sun" {
+  if $::operatingsystem =~ /Ubuntu|Debian/ and $java16_vendor == "sun" {
 
     # Thanks to Java strange licensing
     file {"/var/cache/debconf/sun-java6-bin.preseed":
@@ -44,7 +44,7 @@ class java::v6 {
     ensure => present,
   }
 
-  if $operatingsystem =~ /RedHat|CentOS/ {
+  if $::operatingsystem =~ /RedHat|CentOS/ {
     package {"${java::params::pkgname}-devel":
       alias  => "java-1.6-devel",
       ensure => present,
