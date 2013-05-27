@@ -1,6 +1,6 @@
 class java::params {
 
-  $pkgname = $java16_vendor ? {
+  $pkgname = $java::java16_vendor ? {
     bea => 'java-1.6.0-bea',
     ibm => 'java-1.6.0-ibm',
     sun => $::operatingsystem ? {
